@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATELIER NORTE — Estudio de Arquitectura Contemporánea</title>
+  <meta
+    name="description"
+    content="ATELIER NORTE es un estudio de arquitectura contemporánea especializado en arquitectura residencial minimalista, espacios comerciales y diseño interior."
+  />
+
+  <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & DM Sans (Geometric Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS CDN with Design System Tokens -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#FAFAF9',
+            surface: '#FFFFFF',
+            muted: '#F0EFEA',
+            fg: '#0C0A09',
+            primary: '#1C1917',
+            secondary: '#44403C',
+            'muted-fg': '#57534E',
+            accent: '#A16207',
+            border: '#D6D3D1',
+            destructive: '#DC2626',
+            success: '#15803D',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom Tokens & Editorial Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-bg text-fg font-sans antialiased selection:bg-primary selection:text-white">
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- =======================================================================
+       NAVBAR MINIMALISTA
+       ======================================================================= -->
+  <header
+    id="site-header"
+    class="site-header fixed top-0 left-0 right-0 z-40 border-b border-transparent"
+  >
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
+      <a
+        href="#inicio"
+        class="inline-flex min-h-[44px] items-center text-sm font-medium tracking-[0.22em] text-fg uppercase"
+        aria-label="ATELIER NORTE — Inicio"
+      >
+        ATELIER NORTE
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Navegación principal" class="hidden items-center gap-8 md:flex">
+        <a
+          href="#proyectos"
+          class="inline-flex min-h-[44px] items-center text-xs font-medium tracking-[0.14em] text-secondary uppercase transition-colors duration-200 hover:text-fg"
+        >
+          Proyectos
+        </a>
+        <a
+          href="#estudio"
+          class="inline-flex min-h-[44px] items-center text-xs font-medium tracking-[0.14em] text-secondary uppercase transition-colors duration-200 hover:text-fg"
+        >
+          Estudio
+        </a>
+        <a
+          href="#servicios"
+          class="inline-flex min-h-[44px] items-center text-xs font-medium tracking-[0.14em] text-secondary uppercase transition-colors duration-200 hover:text-fg"
+        >
+          Servicios
+        </a>
+        <a
+          href="#contacto"
+          class="inline-flex min-h-[44px] items-center text-xs font-medium tracking-[0.14em] text-secondary uppercase transition-colors duration-200 hover:text-fg"
+        >
+          Contacto
+        </a>
+        <a
+          href="#contacto"
+          class="inline-flex min-h-[44px] items-center border border-primary px-5 text-xs font-medium tracking-[0.14em] text-primary uppercase transition-colors duration-200 hover:bg-primary hover:text-white"
+        >
+          Agendar consulta
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center border border-border bg-bg/90 text-fg md:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menú de navegación"
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path stroke-linecap="square" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <div
+      id="mobile-menu"
+      class="hidden border-t border-border bg-bg px-6 py-6 md:hidden"
+      aria-label="Menú móvil"
+    >
+      <nav class="flex flex-col gap-2">
+        <a
+          href="#proyectos"
+          class="mobile-nav-link flex min-h-[44px] items-center border-b border-border/60 text-sm tracking-[0.12em] text-fg uppercase"
+        >
+          Proyectos
+        </a>
+        <a
+          href="#estudio"
+          class="mobile-nav-link flex min-h-[44px] items-center border-b border-border/60 text-sm tracking-[0.12em] text-fg uppercase"
+        >
+          Estudio
+        </a>
+        <a
+          href="#servicios"
+          class="mobile-nav-link flex min-h-[44px] items-center border-b border-border/60 text-sm tracking-[0.12em] text-fg uppercase"
+        >
+          Servicios
+        </a>
+        <a
+          href="#contacto"
+          class="mobile-nav-link flex min-h-[44px] items-center border-b border-border/60 text-sm tracking-[0.12em] text-fg uppercase"
+        >
+          Contacto
+        </a>
+        <a
+          href="#contacto"
+          class="mobile-nav-link mt-4 flex min-h-[44px] items-center justify-center bg-primary px-5 text-xs font-medium tracking-[0.14em] text-white uppercase"
+        >
+          Agendar consulta
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <!-- =====================================================================
+         HERO EDITORIAL A PANTALLA COMPLETA
+         ===================================================================== -->
+    <section
+      id="inicio"
+      class="relative flex min-h-screen flex-col justify-between pt-24 pb-10 md:pt-28 md:pb-14"
+    >
+      <div class="mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 gap-10 px-6 md:grid-cols-12 md:items-end md:px-10">
+        <!-- Titular Asimétrico -->
+        <div class="md:col-span-7 lg:col-span-6 md:pb-8">
+          <p class="mb-5 text-xs font-medium tracking-[0.18em] text-muted-fg uppercase">
+            Arquitectura · Interiorismo · Materia
+          </p>
+          <h1 class="font-editorial text-[clamp(2.85rem,6vw,5.4rem)] leading-[0.98] font-normal tracking-[-0.02em] text-fg">
+            Espacios silenciosos construidos con <em class="italic text-secondary">luz</em> y permanencia.
+          </h1>
+          <p class="mt-6 max-w-md text-base leading-relaxed text-secondary">
+            Diseñamos residencias minimalistas, galerías comerciales e interiores atemporales donde el concreto visto, la madera noble y la proporción dialogan con el entorno.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-6">
+            <a
+              href="#proyectos"
+              class="inline-flex min-h-[44px] items-center gap-3 bg-primary px-7 py-3 text-xs font-medium tracking-[0.14em] text-white uppercase transition-colors duration-200 hover:bg-secondary"
+            >
+              Explorar obras
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="square" d="M5 12h14m-6-6 6 6-6 6" />
+              </svg>
+            </a>
+            <a
+              href="#estudio"
+              class="inline-flex min-h-[44px] items-center border-b border-fg/40 pb-1 text-xs font-medium tracking-[0.14em] text-fg uppercase transition-colors duration-200 hover:border-accent hover:text-accent"
+            >
+              Conocer el estudio
+            </a>
+          </div>
+        </div>
+
+        <!-- Fotografía Arquitectónica de Gran Formato -->
+        <div class="md:col-span-5 lg:col-span-6">
+          <figure class="relative aspect-[4/5] w-full overflow-hidden border border-border bg-muted md:aspect-[10/11]">
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85"
+              alt="Residencia contemporánea de concreto visto y grandes ventanales con luz natural rasante"
+              class="h-full w-full object-cover"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <figcaption class="absolute bottom-0 left-0 right-0 flex items-center justify-between border-t border-white/20 bg-primary/75 px-4 py-2.5 text-[11px] tracking-[0.12em] text-white uppercase backdrop-blur-sm">
+              <span>Casa Bruma — Valle de Bravo</span>
+              <span class="tabular-nums">2025 · 480 m²</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Métricas Clave del Estudio -->
+      <div class="mx-auto mt-12 w-full max-w-7xl px-6 md:px-10">
+        <dl class="grid grid-cols-1 border-t border-border pt-8 sm:grid-cols-3 sm:gap-8">
+          <div class="flex items-baseline justify-between border-b border-border pb-4 sm:block sm:border-b-0 sm:pb-0">
+            <dt class="text-xs font-medium tracking-[0.14em] text-muted-fg uppercase">
+              Obras construidas
+            </dt>
+            <dd class="font-editorial tabular-nums text-4xl font-normal text-fg sm:mt-1 md:text-5xl">
+              +45
+            </dd>
+          </div>
+          <div class="flex items-baseline justify-between border-b border-border py-4 sm:block sm:border-b-0 sm:border-l sm:border-border sm:py-0 sm:pl-8">
+            <dt class="text-xs font-medium tracking-[0.14em] text-muted-fg uppercase">
+              Premios internacionales
+            </dt>
+            <dd class="font-editorial tabular-nums text-4xl font-normal text-fg sm:mt-1 md:text-5xl">
+              12
+            </dd>
+          </div>
+          <div class="flex items-baseline justify-between pt-4 sm:block sm:border-l sm:border-border sm:pt-0 sm:pl-8">
+            <dt class="text-xs font-medium tracking-[0.14em] text-muted-fg uppercase">
+              Años de trayectoria
+            </dt>
+            <dd class="font-editorial tabular-nums text-4xl font-normal text-fg sm:mt-1 md:text-5xl">
+              18
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         PORTAFOLIO DE PROYECTOS (GRID ASIMÉTRICO / BENTO EDITORIAL)
+         ===================================================================== -->
+    <section id="proyectos" class="border-t border-border py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6 md:px-10">
+        <div class="flex flex-col justify-between gap-8 md:flex-row md:items-end" data-reveal>
+          <div>
+            <p class="text-xs font-medium tracking-[0.18em] text-muted-fg uppercase">
+              Archivo Seleccionado
+            </p>
+            <h2 class="font-editorial mt-3 text-[clamp(2.1rem,4vw,3.4rem)] leading-[1.06] font-normal text-fg">
+              Obra reciente
+            </h2>
+          </div>
+
+          <!-- Filtros por Categoría -->
+          <div
+            role="group"
+            aria-label="Filtrar proyectos por categoría"
+            class="flex flex-wrap gap-2"
+          >
+            <button
+              type="button"
+              class="filter-btn border border-border px-4 py-2 text-xs font-medium tracking-[0.12em] text-fg uppercase"
+              data-filter="todos"
+              aria-pressed="true"
+            >
+              Todos
+            </button>
+            <button
+              type="button"
+              class="filter-btn border border-border px-4 py-2 text-xs font-medium tracking-[0.12em] text-fg uppercase hover:border-fg"
+              data-filter="residencial"
+              aria-pressed="false"
+            >
+              Residencial
+            </button>
+            <button
+              type="button"
+              class="filter-btn border border-border px-4 py-2 text-xs font-medium tracking-[0.12em] text-fg uppercase hover:border-fg"
+              data-filter="comercial"
+              aria-pressed="false"
+            >
+              Comercial
+            </button>
+            <button
+              type="button"
+              class="filter-btn border border-border px-4 py-2 text-xs font-medium tracking-[0.12em] text-fg uppercase hover:border-fg"
+              data-filter="interiorismo"
+              aria-pressed="false"
+            >
+              Interiorismo
+            </button>
+          </div>
+        </div>
+
+        <!-- Contador accesible de resultados -->
+        <p id="projects-count" class="mt-6 text-xs tracking-[0.12em] text-muted-fg uppercase" aria-live="polite">
+          Mostrando 6 proyectos
+        </p>
+
+        <!-- Bento Editorial Asimétrico -->
+        <div
+          id="projects-grid"
+          class="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-12"
+        >
+          <!-- Los proyectos se renderizan dinámicamente y de forma accesible desde app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         FILOSOFÍA Y PROCESO DE TRABAJO (DISEÑO TIPO REVISTA)
+         ===================================================================== -->
+    <section id="estudio" class="border-t border-border bg-muted/45 py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6 md:px-10">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
+          <!-- Columna Izquierda Editorial -->
+          <div class="lg:col-span-5" data-reveal>
+            <p class="text-xs font-medium tracking-[0.18em] text-muted-fg uppercase">
+              Filosofía &amp; Método
+            </p>
+            <h2 class="font-editorial mt-3 text-[clamp(2.1rem,4vw,3.3rem)] leading-[1.06] font-normal text-fg">
+              La precisión técnica al servicio de la calma espacial.
+            </h2>
+            <p class="mt-6 text-base leading-relaxed text-secondary">
+              Entendemos cada proyecto como una respuesta honesta al lugar, la orientación solar y la materia prima. Eliminamos lo superfluo para revelar la estructura esencial del espacio habitable.
+            </p>
+
+            <figure class="mt-10 aspect-[4/3] overflow-hidden border border-border bg-muted">
+              <img
+                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85"
+                alt="Detalle interior de madera clara, muro limpio y entrada de luz natural"
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+
+          <!-- Columna Derecha: Fases de Trabajo -->
+          <div class="lg:col-span-7 lg:pl-10">
+            <div class="divide-y divide-border border-t border-b border-border">
+              <article class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-12 sm:gap-6" data-reveal>
+                <div class="sm:col-span-2">
+                  <span class="font-editorial tabular-nums text-3xl text-accent">01</span>
+                </div>
+                <div class="sm:col-span-10">
+                  <h3 class="font-editorial text-2xl font-normal text-fg md:text-3xl">
+                    Concepto &amp; Lectura del Sitio
+                  </h3>
+                  <p class="mt-3 text-sm leading-relaxed text-secondary">
+                    Analizamos topografía, asoleamiento, vientos dominantes y programa funcional. Definimos la implantación volumétrica y la paleta material inicial mediante maquetas de estudio y esquemas espaciales.
+                  </p>
+                  <p class="mt-3 text-xs tracking-[0.12em] text-muted-fg uppercase">
+                    Entregables: Estudio solar · Programa arquitectónico · Partido conceptual
+                  </p>
+                </div>
+              </article>
+
+              <article class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-12 sm:gap-6" data-reveal>
+                <div class="sm:col-span-2">
+                  <span class="font-editorial tabular-nums text-3xl text-accent">02</span>
+                </div>
+                <div class="sm:col-span-10">
+                  <h3 class="font-editorial text-2xl font-normal text-fg md:text-3xl">
+                    Anteproyecto &amp; Desarrollo Ejecutivo
+                  </h3>
+                  <p class="mt-3 text-sm leading-relaxed text-secondary">
+                    Traducimos la intención poética en rigor constructivo. Coordinamos ingenierías estructurales, instalaciones ocultas, carpintería a medida y especificaciones exactas de acabados minerales y maderas.
+                  </p>
+                  <p class="mt-3 text-xs tracking-[0.12em] text-muted-fg uppercase">
+                    Entregables: Planimetría ejecutiva · Catálogo de materiales · Presupuesto base
+                  </p>
+                </div>
+              </article>
+
+              <article class="grid grid-cols-1 gap-4 py-8 sm:grid-cols-12 sm:gap-6" data-reveal>
+                <div class="sm:col-span-2">
+                  <span class="font-editorial tabular-nums text-3xl text-accent">03</span>
+                </div>
+                <div class="sm:col-span-10">
+                  <h3 class="font-editorial text-2xl font-normal text-fg md:text-3xl">
+                    Ejecución de Obra &amp; Curaduría
+                  </h3>
+                  <p class="mt-3 text-sm leading-relaxed text-secondary">
+                    Acompañamos la dirección arquitectónica en obra semana a semana, cuidando juntas constructivas, colados de concreto aparente, iluminación arquitectónica y la curaduría final del mobiliario.
+                  </p>
+                  <p class="mt-3 text-xs tracking-[0.12em] text-muted-fg uppercase">
+                    Entregables: Supervisión en sitio · Control de calidad · Puesta en escena
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SERVICIOS (LISTA / ACORDEÓN INTERACTIVO LIMPIO)
+         ===================================================================== -->
+    <section id="servicios" class="border-t border-border py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6 md:px-10">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
+          <div class="lg:col-span-4" data-reveal>
+            <p class="text-xs font-medium tracking-[0.18em] text-muted-fg uppercase">
+              Disciplinas
+            </p>
+            <h2 class="font-editorial mt-3 text-[clamp(2.1rem,4vw,3.3rem)] leading-[1.06] font-normal text-fg">
+              Servicios del estudio
+            </h2>
+            <p class="mt-4 text-sm leading-relaxed text-secondary">
+              Abordamos cada encargo de forma integral, desde la primera línea sobre el terreno hasta el último detalle de iluminación y mobiliario.
+            </p>
+          </div>
+
+          <div class="lg:col-span-8">
+            <div class="divide-y divide-border border-t border-b border-border" id="services-accordion">
+              <!-- Servicio 1 -->
+              <div class="service-item">
+                <h3>
+                  <button
+                    type="button"
+                    class="accordion-trigger flex min-h-[64px] w-full items-center justify-between gap-4 py-5 text-left transition-colors duration-200 hover:text-accent"
+                    aria-expanded="true"
+                    aria-controls="service-panel-1"
+                    id="service-trigger-1"
+                  >
+                    <span class="flex items-baseline gap-5">
+                      <span class="tabular-nums text-xs font-medium tracking-[0.14em] text-muted-fg">01</span>
+                      <span class="font-editorial text-2xl font-normal text-fg md:text-3xl">Arquitectura Residencial</span>
+                    </span>
+                    <svg class="accordion-icon h-5 w-5 shrink-0 text-fg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path stroke-linecap="square" d="M12 5v14M5 12h14" />
+                    </svg>
+                  </button>
+                </h3>
+                <div
+                  id="service-panel-1"
+                  role="region"
+                  aria-labelledby="service-trigger-1"
+                  class="accordion-panel is-open"
+                >
+                  <div class="accordion-panel-inner">
+                    <div class="grid grid-cols-1 gap-6 pb-6 pl-0 sm:grid-cols-12 sm:pl-9">
+                      <p class="text-sm leading-relaxed text-secondary sm:col-span-7">
+                        Viviendas unifamiliares de nueva planta, casas de descanso y rehabilitaciones integrales diseñadas a partir de la luz natural, ventilación pasiva y materiales nobles de bajo mantenimiento.
+                      </p>
+                      <ul class="space-y-1.5 text-xs tracking-[0.06em] text-muted-fg uppercase sm:col-span-5">
+                        <li>· Proyecto arquitectónico completo</li>
+                        <li>· Modelado BIM y coordinación técnica</li>
+                        <li>· Dirección de obra</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Servicio 2 -->
+              <div class="service-item">
+                <h3>
+                  <button
+                    type="button"
+                    class="accordion-trigger flex min-h-[64px] w-full items-center justify-between gap-4 py-5 text-left transition-colors duration-200 hover:text-accent"
+                    aria-expanded="false"
+                    aria-controls="service-panel-2"
+                    id="service-trigger-2"
+                  >
+                    <span class="flex items-baseline gap-5">
+                      <span class="tabular-nums text-xs font-medium tracking-[0.14em] text-muted-fg">02</span>
+                      <span class="font-editorial text-2xl font-normal text-fg md:text-3xl">Espacios Comerciales &amp; Hospitalidad</span>
+                    </span>
+                    <svg class="accordion-icon h-5 w-5 shrink-0 text-fg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path stroke-linecap="square" d="M12 5v14M5 12h14" />
+                    </svg>
+                  </button>
+                </h3>
+                <div
+                  id="service-panel-2"
+                  role="region"
+                  aria-labelledby="service-trigger-2"
+                  class="accordion-panel"
+                >
+                  <div class="accordion-panel-inner">
+                    <div class="grid grid-cols-1 gap-6 pb-6 pl-0 sm:grid-cols-12 sm:pl-9">
+                      <p class="text-sm leading-relaxed text-secondary sm:col-span-7">
+                        Galerías, boutiques, restaurantes, oficinas creativas y hoteles boutique donde la arquitectura potencia la identidad de marca y construye una experiencia memorable para el visitante.
+                      </p>
+                      <ul class="space-y-1.5 text-xs tracking-[0.06em] text-muted-fg uppercase sm:col-span-5">
+                        <li>· Concepto espacial de marca</li>
+                        <li>· Flujos y acústica arquitectónica</li>
+                        <li>· Iluminación escénica y técnica</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Servicio 3 -->
+              <div class="service-item">
+                <h3>
+                  <button
+                    type="button"
+                    class="accordion-trigger flex min-h-[64px] w-full items-center justify-between gap-4 py-5 text-left transition-colors duration-200 hover:text-accent"
+                    aria-expanded="false"
+                    aria-controls="service-panel-3"
+                    id="service-trigger-3"
+                  >
+                    <span class="flex items-baseline gap-5">
+                      <span class="tabular-nums text-xs font-medium tracking-[0.14em] text-muted-fg">03</span>
+                      <span class="font-editorial text-2xl font-normal text-fg md:text-3xl">Diseño Interior &amp; Mobiliario a Medida</span>
+                    </span>
+                    <svg class="accordion-icon h-5 w-5 shrink-0 text-fg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path stroke-linecap="square" d="M12 5v14M5 12h14" />
+                    </svg>
+                  </button>
+                </h3>
+                <div
+                  id="service-panel-3"
+                  role="region"
+                  aria-labelledby="service-trigger-3"
+                  class="accordion-panel"
+                >
+                  <div class="accordion-panel-inner">
+                    <div class="grid grid-cols-1 gap-6 pb-6 pl-0 sm:grid-cols-12 sm:pl-9">
+                      <p class="text-sm leading-relaxed text-secondary sm:col-span-7">
+                        Curaduría de atmósferas interiores mediante textiles naturales, piedra, madera maciza y piezas de carpintería o herrería diseñadas exclusivamente para cada espacio.
+                      </p>
+                      <ul class="space-y-1.5 text-xs tracking-[0.06em] text-muted-fg uppercase sm:col-span-5">
+                        <li>· Carpintería arquitectónica</li>
+                        <li>· Selección de arte y objetos</li>
+                        <li>· Diseño de piezas únicas</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Servicio 4 -->
+              <div class="service-item">
+                <h3>
+                  <button
+                    type="button"
+                    class="accordion-trigger flex min-h-[64px] w-full items-center justify-between gap-4 py-5 text-left transition-colors duration-200 hover:text-accent"
+                    aria-expanded="false"
+                    aria-controls="service-panel-4"
+                    id="service-trigger-4"
+                  >
+                    <span class="flex items-baseline gap-5">
+                      <span class="tabular-nums text-xs font-medium tracking-[0.14em] text-muted-fg">04</span>
+                      <span class="font-editorial text-2xl font-normal text-fg md:text-3xl">Consultoría de Viabilidad &amp; Terrenos</span>
+                    </span>
+                    <svg class="accordion-icon h-5 w-5 shrink-0 text-fg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path stroke-linecap="square" d="M12 5v14M5 12h14" />
+                    </svg>
+                  </button>
+                </h3>
+                <div
+                  id="service-panel-4"
+                  role="region"
+                  aria-labelledby="service-trigger-4"
+                  class="accordion-panel"
+                >
+                  <div class="accordion-panel-inner">
+                    <div class="grid grid-cols-1 gap-6 pb-6 pl-0 sm:grid-cols-12 sm:pl-9">
+                      <p class="text-sm leading-relaxed text-secondary sm:col-span-7">
+                        Evaluación normativa, potencial constructivo y estimación preliminar de inversión antes de adquirir un predio o inmueble existente para transformación.
+                      </p>
+                      <ul class="space-y-1.5 text-xs tracking-[0.06em] text-muted-fg uppercase sm:col-span-5">
+                        <li>· Análisis de uso de suelo</li>
+                        <li>· Diagnóstico estructural</li>
+                        <li>· Ruta crítica y presupuesto</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         CONTACTO / AGENDAR CONSULTA
+         ===================================================================== -->
+    <section id="contacto" class="border-t border-border bg-muted/45 py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6 md:px-10">
+        <div class="grid grid-cols-1 gap-14 lg:grid-cols-12">
+          <!-- Datos Directos del Estudio -->
+          <div class="lg:col-span-5" data-reveal>
+            <p class="text-xs font-medium tracking-[0.18em] text-muted-fg uppercase">
+              Iniciar Conversación
+            </p>
+            <h2 class="font-editorial mt-3 text-[clamp(2.1rem,4vw,3.3rem)] leading-[1.06] font-normal text-fg">
+              Agendar una consulta privada
+            </h2>
+            <p class="mt-4 text-sm leading-relaxed text-secondary">
+              Cuéntanos brevemente sobre tu terreno, inmueble o programa de necesidades. Respondemos todas las solicitudes en menos de 48 horas hábiles.
+            </p>
+
+            <dl class="mt-10 space-y-6 border-t border-border pt-8 text-sm">
+              <div>
+                <dt class="text-xs font-medium tracking-[0.14em] text-muted-fg uppercase">Estudio</dt>
+                <dd class="mt-1 text-fg">Calle Colima 214, Piso 3 · Roma Norte, Ciudad de México</dd>
+              </div>
+              <div>
+                <dt class="text-xs font-medium tracking-[0.14em] text-muted-fg uppercase">Correo directo</dt>
+                <dd class="mt-1">
+                  <a href="mailto:hola@ateliernorte.studio" class="text-fg underline decoration-border underline-offset-4 hover:decoration-fg">
+                    hola@ateliernorte.studio
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="text-xs font-medium tracking-[0.14em] text-muted-fg uppercase">Teléfono</dt>
+                <dd class="mt-1 tabular-nums">
+                  <a href="tel:+525541208890" class="text-fg hover:text-accent">
+                    +52 55 4120 8890
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="text-xs font-medium tracking-[0.14em] text-muted-fg uppercase">Horario de atención</dt>
+                <dd class="mt-1 text-secondary">Lunes a Viernes · 09:30 — 18:30 h</dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- Formulario Minimalista con Validación Accesible -->
+          <div class="lg:col-span-7 lg:pl-10">
+            <form
+              id="consultation-form"
+              novalidate
+              class="border border-border bg-surface p-8 md:p-10"
+            >
+              <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+                <!-- Nombre -->
+                <div>
+                  <label for="contact-name" class="block text-xs font-medium tracking-[0.14em] text-fg uppercase">
+                    Nombre completo <span class="text-accent" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    id="contact-name"
+                    name="name"
+                    type="text"
+                    required
+                    autocomplete="name"
+                    placeholder="Ej. Valeria Mendoza"
+                    aria-describedby="error-name"
+                    class="form-field mt-2 min-h-[44px] w-full py-2 text-sm text-fg placeholder:text-muted-fg/60"
+                  />
+                  <p id="error-name" class="mt-1.5 hidden text-xs text-destructive" role="alert"></p>
+                </div>
+
+                <!-- Correo -->
+                <div>
+                  <label for="contact-email" class="block text-xs font-medium tracking-[0.14em] text-fg uppercase">
+                    Correo electrónico <span class="text-accent" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    required
+                    autocomplete="email"
+                    placeholder="nombre@correo.com"
+                    aria-describedby="error-email"
+                    class="form-field mt-2 min-h-[44px] w-full py-2 text-sm text-fg placeholder:text-muted-fg/60"
+                  />
+                  <p id="error-email" class="mt-1.5 hidden text-xs text-destructive" role="alert"></p>
+                </div>
+              </div>
+
+              <div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2">
+                <!-- Tipo de proyecto -->
+                <div>
+                  <label for="contact-type" class="block text-xs font-medium tracking-[0.14em] text-fg uppercase">
+                    Tipo de proyecto <span class="text-accent" aria-hidden="true">*</span>
+                  </label>
+                  <select
+                    id="contact-type"
+                    name="projectType"
+                    required
+                    aria-describedby="error-type"
+                    class="form-field mt-2 min-h-[44px] w-full py-2 text-sm text-fg"
+                  >
+                    <option value="">Seleccionar disciplina</option>
+                    <option value="residencial">Arquitectura Residencial</option>
+                    <option value="comercial">Espacio Comercial / Hospitalidad</option>
+                    <option value="interiorismo">Diseño Interior</option>
+                    <option value="consultoria">Consultoría de Viabilidad</option>
+                  </select>
+                  <p id="error-type" class="mt-1.5 hidden text-xs text-destructive" role="alert"></p>
+                </div>
+
+                <!-- Ubicación / Superficie estimada -->
+                <div>
+                  <label for="contact-location" class="block text-xs font-medium tracking-[0.14em] text-fg uppercase">
+                    Ubicación y superficie aprox.
+                  </label>
+                  <input
+                    id="contact-location"
+                    name="location"
+                    type="text"
+                    placeholder="Ej. Valle de Bravo · 350 m²"
+                    class="form-field mt-2 min-h-[44px] w-full py-2 text-sm text-fg placeholder:text-muted-fg/60"
+                  />
+                </div>
+              </div>
+
+              <!-- Mensaje -->
+              <div class="mt-8">
+                <label for="contact-message" class="block text-xs font-medium tracking-[0.14em] text-fg uppercase">
+                  Descripción del encargo <span class="text-accent" aria-hidden="true">*</span>
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="4"
+                  required
+                  placeholder="Cuéntanos el estado actual del proyecto, tiempos deseados y expectativas espaciales."
+                  aria-describedby="error-message"
+                  class="form-field mt-2 w-full resize-y py-2 text-sm text-fg placeholder:text-muted-fg/60"
+                ></textarea>
+                <p id="error-message" class="mt-1.5 hidden text-xs text-destructive" role="alert"></p>
+              </div>
+
+              <!-- Submit & Feedback -->
+              <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <button
+                  type="submit"
+                  class="inline-flex min-h-[44px] items-center justify-center bg-primary px-8 py-3 text-xs font-medium tracking-[0.14em] text-white uppercase transition-colors duration-200 hover:bg-secondary"
+                >
+                  Enviar solicitud
+                </button>
+                <p class="text-xs text-muted-fg">
+                  Campos marcados con <span class="text-accent">*</span> son obligatorios.
+                </p>
+              </div>
+
+              <div
+                id="form-status"
+                role="status"
+                aria-live="polite"
+                class="mt-6 hidden border border-success/40 bg-success/5 p-4 text-sm text-success"
+              ></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       FOOTER
+       ======================================================================= -->
+  <footer class="border-t border-border bg-bg py-10">
+    <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-6 text-xs tracking-[0.12em] text-muted-fg uppercase sm:flex-row sm:items-center md:px-10">
+      <p>© 2026 ATELIER NORTE. Todos los derechos reservados.</p>
+      <div class="flex gap-6">
+        <a href="#inicio" class="inline-flex min-h-[44px] items-center hover:text-fg">Inicio</a>
+        <a href="#proyectos" class="inline-flex min-h-[44px] items-center hover:text-fg">Proyectos</a>
+        <a href="#estudio" class="inline-flex min-h-[44px] items-center hover:text-fg">Estudio</a>
+        <a href="#contacto" class="inline-flex min-h-[44px] items-center hover:text-fg">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       MODAL INTERACTIVO DE FICHA TÉCNICA DE PROYECTO
+       ======================================================================= -->
+  <div
+    id="project-modal"
+    class="modal-overlay fixed inset-0 z-50 flex items-center justify-center bg-primary/70 p-4 backdrop-blur-xs md:p-8"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-hidden="true"
+  >
+    <div
+      id="modal-panel"
+      class="modal-panel relative max-h-[90vh] w-full max-w-4xl overflow-y-auto border border-border bg-surface text-fg"
+    >
+      <div class="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-surface/95 px-6 py-4 backdrop-blur-xs">
+        <span id="modal-category" class="text-xs font-medium tracking-[0.16em] text-accent uppercase"></span>
+        <button
+          id="modal-close-btn"
+          type="button"
+          class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center border border-border text-fg transition-colors duration-200 hover:bg-primary hover:text-white"
+          aria-label="Cerrar ficha técnica"
+        >
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="square" d="M6 6l12 12M18 6 6 18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12">
+        <div class="aspect-[4/3] bg-muted md:col-span-7 md:aspect-auto md:min-h-[420px]">
+          <img
+            id="modal-image"
+            src=""
+            alt=""
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <div class="flex flex-col justify-between p-6 md:col-span-5 md:p-8">
+          <div>
+            <h3 id="modal-title" class="font-editorial text-3xl font-normal text-fg md:text-4xl"></h3>
+            <p id="modal-description" class="mt-4 text-sm leading-relaxed text-secondary"></p>
+          </div>
+
+          <dl class="mt-8 divide-y divide-border border-t border-b border-border text-xs">
+            <div class="flex items-center justify-between py-3">
+              <dt class="tracking-[0.12em] text-muted-fg uppercase">Ubicación</dt>
+              <dd id="modal-location" class="font-medium text-fg"></dd>
+            </div>
+            <div class="flex items-center justify-between py-3">
+              <dt class="tracking-[0.12em] text-muted-fg uppercase">Año</dt>
+              <dd id="modal-year" class="tabular-nums font-medium text-fg"></dd>
+            </div>
+            <div class="flex items-center justify-between py-3">
+              <dt class="tracking-[0.12em] text-muted-fg uppercase">Superficie</dt>
+              <dd id="modal-area" class="tabular-nums font-medium text-fg"></dd>
+            </div>
+            <div class="flex items-start justify-between gap-4 py-3">
+              <dt class="shrink-0 tracking-[0.12em] text-muted-fg uppercase">Materialidad</dt>
+              <dd id="modal-materials" class="text-right font-medium text-fg"></dd>
+            </div>
+            <div class="flex items-center justify-between py-3">
+              <dt class="tracking-[0.12em] text-muted-fg uppercase">Programa</dt>
+              <dd id="modal-program" class="font-medium text-fg"></dd>
+            </div>
+          </dl>
+
+          <a
+            href="#contacto"
+            id="modal-cta-link"
+            class="mt-6 inline-flex min-h-[44px] w-full items-center justify-center bg-primary px-6 py-3 text-xs font-medium tracking-[0.14em] text-white uppercase transition-colors duration-200 hover:bg-secondary"
+          >
+            Consultar proyecto similar
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
